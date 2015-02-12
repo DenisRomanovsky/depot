@@ -6,4 +6,6 @@ class Product < ActiveRecord::Base
    format: {
     with: %r{\.(png|jpg|gif|jpeg)\Z}i,
     message: "is incorrect. Only jpg. or .gif or. png files are allowed."}
+  validates :title, length: { minimum: 10,
+    too_short: "%{count} characters is the minimum allowed" }
 end
