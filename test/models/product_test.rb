@@ -66,4 +66,20 @@ class ProductTest < ActiveSupport::TestCase
     assert_equal [I18n.translate('errors.messages.taken')],
                  product.errors[:title]
   end
+
+  test "minimum 10 symbols in title" do
+    product = new_product(title: "ABC")
+    assert product.invalid?
+    assert_equal ["10 characters is the minimum allowed"], product.errors[:title]
+  end
+
+  test "product update" do
+    products(:ruby).title = "New title"
+    assert_equal [products(:ruby).title], ["New title"], "Product was not updated!"
+  end
+
+  test "product deletion" do
+    products(:ruby).delete
+    assert products(:ruby).id?
+  end
 end
