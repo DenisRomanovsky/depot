@@ -53,4 +53,13 @@ class ProductsControllerTest < ActionController::TestCase
 
     assert_redirected_to products_path
   end
+
+  test "should be three actions for each product on index" do
+    get :index
+    assert_select '.products .list_actions', minimum: 3
+    ['Show', 'Edit', 'Destroy'].each do |action|
+      assert_select '.products .list_actions a', action
+    end
+  end
+
 end
