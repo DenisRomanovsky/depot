@@ -8,4 +8,8 @@ class Product < ActiveRecord::Base
     message: "is incorrect. Only jpg. or .gif or. png files are allowed."}
   validates :title, length: { minimum: 10,
     too_short: "%{count} characters is the minimum allowed" }
+
+  def self.latest
+    Product.order(:updated_at).last
+  end
 end
