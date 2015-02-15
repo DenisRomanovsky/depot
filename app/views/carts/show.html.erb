@@ -1,14 +1,28 @@
-<%  if notice %>
+<% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h2> Depot Cart </h2>
 
-<ul>
+<h2>Your Cart</h2>
+<table>
+
   <% @cart.line_items.each do |item| %>
-    <li> <%= item.quantity.to_s + " time".pluralize(item.quantity) + " " + item.product.title %> </li>
-    <% end %>
-</ul>
 
-<%= link_to 'Back', store_path %>
-<p> <%= session[:show_store_counter] %>  </p>
+    <tr>
+      <td><%= item.quantity %>&times;</td> <!-- &times добавляет крутяцкий икс после значения! -->
+      <td><%= item.product.title %></td>
+      <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+    </tr>
+
+  <% end %>
+
+  <tr class="total_line">
+    <td colspan="2">Total</td>
+    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+  </tr>
+
+</table>
+
+<div><%= link_to 'Back to shopping.', store_path %></div>
+<div><%= button_to 'Clear', @cart, method: :delete, data: { confirm: "Are you sure?" } %></div>
+
