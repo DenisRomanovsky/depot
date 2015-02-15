@@ -30,7 +30,7 @@ class LineItemsController < ApplicationController
   def create
     product = Product.find(params[:product_id]) #Ловим параметр, созданный кнопкой Add To Cart.
 
-    @line_item = @cart.line_items.build(product: product) #Автоматом создаёт связи согласно модели.
+    @line_item =  @cart.add_product(product.id)#Автоматом создаёт связи согласно модели внутри, через Build.
 
     respond_to do |format|
       if @line_item.save

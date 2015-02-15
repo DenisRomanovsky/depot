@@ -14,8 +14,4 @@ module CurrentCart
     session[:cart_id] = @cart.id
     session[:show_store_counter] = 0
   end
-
-  def index_counter_increase
-
-  end
 end

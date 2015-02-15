@@ -6,9 +6,9 @@
 
 <ul>
   <% @cart.line_items.each do |item| %>
-    <li> <%= item.product.title %> </li>
+    <li> <%= "#{item.quantity} times #{item.product.title} "%> </li>
     <% end %>
 </ul>
 
-<%= link_to 'Back', products_path %>
+<%= link_to 'Back', store_path %>
 <p> <%= session[:show_store_counter] %>  </p>

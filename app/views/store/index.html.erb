@@ -4,8 +4,8 @@
 
 <h1>Your Pragmatic Catalog <%= @show_store_counter %></h1>
 
-<% if ! @show_store_counter.nil? %>
-<h2>Visited <%= @show_store_counter %> <%= "time".pluralize(@show_store_counter) %>.</h2>
+<% if ! (session[:show_store_counter]).nil? %>
+<h2>Visited <%= session[:show_store_counter] %> <%= "time".pluralize(@show_store_counter) %>.</h2>
 <% end %>
 
 <% cache ["store", Product.latest ] do %>
