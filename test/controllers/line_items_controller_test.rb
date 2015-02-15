@@ -24,10 +24,12 @@ class LineItemsControllerTest < ActionController::TestCase
     assert_redirected_to cart_path(assigns(:line_item).cart)
   end
 
+=begin This test is not valid. No Show page is available for users.
   test "should show line_item" do
     get :show, id: @line_item
     assert_response :success
   end
+=end
 
   test "should get edit" do
     get :edit, id: @line_item
@@ -35,7 +37,7 @@ class LineItemsControllerTest < ActionController::TestCase
   end
 
   test "should update line_item" do
-    patch :update, id: @line_item, line_item: { cart_id: @line_item.cart_id, product_id: @line_item.product_id }
+    patch :update, id: @line_item, line_item: { product_id: @line_item.product_id }
     assert_redirected_to line_item_path(assigns(:line_item))
   end
 
