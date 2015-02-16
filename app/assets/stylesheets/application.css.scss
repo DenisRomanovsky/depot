@@ -27,6 +27,16 @@
   }
 }
 
+.image_container {
+height: 40px;
+}
+
+.image_container img {
+    height: 100%;
+    width: auto;
+    display: inline;
+}
+
 #notice {
   color: #000 !important;
   border: 2px solid red;

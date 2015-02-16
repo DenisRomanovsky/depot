@@ -8,6 +8,8 @@ class Cart < ActiveRecord::Base
       current_item
     else
       current_item = line_items.build(product_id: product_id)
+      current_item.price = Product.find_by_id(product_id).price
+      current_item
     end
   end
 
