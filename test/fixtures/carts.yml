@@ -4,8 +4,12 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+cart1: {}
+
+cart2: {}
+
+cart3: {}
+
 one: {}
-# column: value
-#
+
 two: {}
-#  column: value
