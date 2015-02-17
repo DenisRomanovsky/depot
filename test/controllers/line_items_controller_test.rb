@@ -41,11 +41,20 @@ class LineItemsControllerTest < ActionController::TestCase
     assert_redirected_to line_item_path(assigns(:line_item))
   end
 
-=begin Should be fixed with mocks(?)  test "should destroy line_item" do
+=begin Doesn`t work because of sessions.
+  test "should destroy line_item" do
+    cart = carts(:cart_with_ruby)
+    puts cart
+    assert_equal 1, cart.line_items.count, "cart_with_ruby has more or less line items than one."
+    cart.add_product(products(:one).id)
+
     assert_difference('LineItem.count', -1) do
-      delete :destroy, id: @line_item
+      delete :destroy, id: cart.line_items.first
     end
-    test redirection here!
+    assert_redirected_to cart_path(cart.id)
+
+    delete :destroy, id: cart.line_items.first
+    assert_equal 0, cart.line_items.count
   end
 =end
 end
