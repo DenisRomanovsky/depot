@@ -51,6 +51,8 @@
     padding: 1em 2em;
     width: 13em;
     background: #141;
+    font-size: smaller;
+    color: white;
 
 /* START_HIGHLIGHT */
     form, div {
@@ -62,8 +64,6 @@
     }
 
     #cart {
-      font-size: smaller;
-      color:     white;
 
       table {
         border-top:    1px dotted #595;
