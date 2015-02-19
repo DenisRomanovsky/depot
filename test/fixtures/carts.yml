@@ -15,3 +15,5 @@ one: {}
 two: {}
 
 cart_to_delete: {}
+
+cart_for_deletion_of_items: {}

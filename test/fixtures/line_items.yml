@@ -11,3 +11,7 @@ two:
 ruby_line:
   product: ruby
   cart:  cart_with_ruby
+
+delete_line:
+  product: ruby
+  cart: cart_for_deletion_of_items
