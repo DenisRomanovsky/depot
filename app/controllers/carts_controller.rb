@@ -30,7 +30,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
+        format.html { render @cart, notice: 'Cart was successfully created.' }
         format.json { render action: 'show', status: :created, location: @cart }
       else
         format.html { render action: 'new' }
@@ -56,10 +56,10 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
-    @cart.destroy if @cart_id == session[:cart_id]
+
     session[:cart_id] = nil
     respond_to do |format|
-      format.html { redirect_to store_url, notice: "You cart is empty now!" }
+      format.html { redirect_to '/' }
       format.json { head :no_content }
     end
   end
