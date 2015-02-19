@@ -6,6 +6,12 @@
 
 <% if ! (session[:show_store_counter]).nil? %>
 <h2>Visited <%= session[:show_store_counter] %> <%= "time".pluralize(session[:show_store_counter]) %>.</h2>
+
+<h2>Session cart id <%= session[:cart_id] %></h2>
+
+
+<h2>Cart id <%= @cart.id %></h2>
+
 <% end %>
 
 <% cache ["store", Product.latest ] do %>

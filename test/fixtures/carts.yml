@@ -13,3 +13,5 @@ cart_empty: {}
 one: {}
 
 two: {}
+
+cart_to_delete: {}

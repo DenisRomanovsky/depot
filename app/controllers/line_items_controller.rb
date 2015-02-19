@@ -62,18 +62,18 @@ class LineItemsController < ApplicationController
   def destroy
     cart_id = @line_item.cart_id
     if cart_id == session[:cart_id]
-      @line_item = LineItem.find(params[:id])
-      @line_item.destroy
-      respond_to do |format|
-        format.html { redirect_to cart_path(cart_id)}
-          format.js {@cart = @line_item.cart}
-        format.json { head :no_content }
-        end
-      else
+     @line_item = LineItem.find(params[:id])
+        @line_item.destroy
         respond_to do |format|
-          format.html { redirect_to store_url, notice: " An error occured. Your cart was not deleted. Please, contact us, if this isuue occurs again." }
-          logger.error "Attempt to view delete a cart using fake session id. Session ID: #{session[:cart_id]} , Cart ID #{cart_id}"
+          format.html { redirect_to cart_path(cart_id)}
+            format.js {@cart = @line_item.cart}
+          format.json { head :no_content }
         end
+    else
+      respond_to do |format|
+            format.html { redirect_to store_url, notice: "Your cart was not deleted. Please, contact us, if this isuue occurs again." }
+      logger.error "Attempt to view delete a cart using fake session id. Session ID: #{session[:cart_id]} , Cart ID #{cart_id}"
+      end
     end
   end
 

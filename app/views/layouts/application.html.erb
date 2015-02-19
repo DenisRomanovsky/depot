@@ -19,7 +19,9 @@
       <div id= "time"> <%= Time.now.asctime %></div>
 
       <div id="cart">
+      <% if @cart %>
       <%=  render @cart %>
+      <% end %>
       </div>
 
     </div>

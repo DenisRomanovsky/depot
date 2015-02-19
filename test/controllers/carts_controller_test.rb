@@ -21,7 +21,7 @@ class CartsControllerTest < ActionController::TestCase
       post :create, cart: {  }
     end
 
-    assert_redirected_to cart_path(assigns(:cart))
+    assert_response(:success, message = 'Error or redirection when creating a cart.' )
   end
 
   test "should show cart" do
@@ -40,8 +40,9 @@ class CartsControllerTest < ActionController::TestCase
   end
 
   test "should destroy cart" do
+    session[:cart_id] = carts(:cart_to_delete).id
     assert_difference('Cart.count', -1) do
-      delete :destroy, id: @cart
+      delete :destroy, id: carts(:cart_to_delete).id
     end
 
     assert_redirected_to store_path
