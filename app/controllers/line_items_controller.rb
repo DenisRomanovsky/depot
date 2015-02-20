@@ -77,6 +77,23 @@ class LineItemsController < ApplicationController
     end
   end
 
+
+  def decrement
+    @cart = Cart.find_by_id(session[:cart_id])
+    @line_item = @cart.decrement_line_item_quantity(params[:id]) if @cart.line_items.find_by_id(params[:id]) # Параметр передается имплицитно, без явного определния в кнопке.
+    respond_to do |format|
+      if @line_item.save
+        format.html { redirect_to store_path, notice: 'Line item was successfully updated.' }
+        format.js {@current_item = @line_item}
+        format.json { head :ok }
+      else
+        format.html { redirect_to store_url, notice: "Line Item quantity was not changed." }
+        format.js { redirect_to store_url, notice: "Line Item quantity was not changed." }
+        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_line_item
