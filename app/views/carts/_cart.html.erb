@@ -8,6 +8,7 @@
   </tr>
 </table>
 <div><%= button_to 'Clear', @cart, method: :delete, data: { confirm: "Are you sure?" }, remote: true %></div>
+<div><%= button_to 'Checkout', new_order_path, method: :get%></div>
 <% end %>
 <div></div>
 
