@@ -1,13 +1,20 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Dave Thomas
   address: MyText
-  email: MyString
-  pay_type: MyString
+  email: MyString@dave.com
+  pay_type: Check
 
 two:
-  name: MyString
-  address: MyText
-  email: MyString
-  pay_type: MyString
+  name: Tommy Gun
+  address: MyText GUN GUN
+  email: MyString@gun.text
+  pay_type: Credit Card
+
+to_delete:
+  name: Tommy Gun Killed
+  address: MyText GUN GUN
+  email: MyString@gun.text
+  pay_type: Cash
+
