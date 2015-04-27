@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
       redirect_to store_url , notice: "Your cart is empty."
       return
     end
-      @order = Order.new
+    @order = Order.new
   end
 
   # GET /orders/1/edit
@@ -39,10 +39,17 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
 
+        #Debug of emails
+        OrderNotifier.received(@order).deliver
+        File.open('received.txt', 'w'){ |file| file.write ActionMailer::Base.deliveries.last }
+        OrderNotifier.received(@order).deliver
+        File.open('shipped.txt', 'w'){ |file| file.write ActionMailer::Base.deliveries.last }
+        #
+
         format.html { redirect_to store_url, notice: 'Thank you for your order.' }
         format.json { render action: 'show', status: :created, location: @order }
       else
-        @cart = current_cart # This is from the book. Where this variable is set?
+        @cart = Cart.find session[:cart_id] # This is from the book. Where this variable is set?
         format.html { render action: 'new' }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
@@ -74,13 +81,13 @@ class OrdersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = Order.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_order
+    @order = Order.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_params
-      params.require(:order).permit(:name, :address, :email, :pay_type)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def order_params
+    params.require(:order).permit(:name, :address, :email, :pay_type)
+  end
 end
