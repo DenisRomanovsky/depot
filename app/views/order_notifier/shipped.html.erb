@@ -5,5 +5,7 @@
     <th>Quantity</th>
     <th>Description</th>
   </tr>
-  <%= render @order.line_items -%>
+  <% @order.line_items.each do |line_item| %>
+      <%=sprintf("%2d x %s", line_item.quantity, truncate(line_item.product.title, length: 50))%>
+  <% end %>
 </table>

@@ -20,6 +20,7 @@ received.txt
 /log/*
 !/log/.keep
 /tmp
+/.idea
 /.c9/
 /spring/*.pid
 

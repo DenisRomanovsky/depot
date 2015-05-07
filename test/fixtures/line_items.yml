@@ -3,7 +3,7 @@
 one:
   product_id:
   cart_id:
-  order: one
+  order:
 
 two:
   product_id:
@@ -12,7 +12,16 @@ two:
 ruby_line:
   product: ruby
   cart:  cart_with_ruby
+  order: one
+  quantity: 1
 
 delete_line:
   product: ruby
   cart: cart_for_deletion_of_items
+
+email_line:
+  product: ruby
+  cart:  two
+  order: email_order
+  quantity: 2
+  price: 10

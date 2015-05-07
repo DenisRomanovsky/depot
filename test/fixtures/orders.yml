@@ -18,3 +18,8 @@ to_delete:
   email: MyString@gun.text
   pay_type: Cash
 
+email_order:
+  name: Jeffry the OneHaded
+  address: Edge of the Earth
+  email: MyString@gun.text
+  pay_type: Credit Card

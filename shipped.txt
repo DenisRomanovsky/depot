@@ -1,18 +1,19 @@
-Date: Mon, 27 Apr 2015 13:19:58 +0300
+Date: Thu, 07 May 2015 17:04:02 +0300
 From: denis@romanovsky.com
-To: 1234
-Message-ID: <553e0d4eac74b_1374185bdc0549e6@denis-BelTech.mail>
+To: MyString@dave.com
+Message-ID: <554b70d24059c_1cb970d334616c@denis-BelTech.mail>
 Subject: Depot Order Confirmation.
 Mime-Version: 1.0
 Content-Type: text/plain;
  charset=UTF-8
 Content-Transfer-Encoding: 7bit
 
-Dear 1234
+Dear Dave Thomas
 
 Good day, Sir!
 
 Thank you for purchasing this item:
+
 
 Will inform you, when your purchase is shipped.
 
