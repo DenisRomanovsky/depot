@@ -17,7 +17,7 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     cart = Cart.find(session[:cart_id])
-    assert_equal 1, cart.line_items.size
+    assert_equal 1, cart.line_items.length
     assert_equal ruby_book, cart.line_items.first.product
 
     get'/orders/new'
@@ -32,7 +32,7 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_template 'index'
     cart = Cart.find(session[:cart_id])
-    assert_equal 0, cart.line_items.size
+    assert_equal 0, cart.line_items.length
 
     orders = Order.all
     order = orders[0]
