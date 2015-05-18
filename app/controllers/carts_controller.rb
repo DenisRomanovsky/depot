@@ -78,6 +78,6 @@ class CartsController < ApplicationController
 
     def invalid_cart
       logger.error "Attempt to view invalid cart. ID: #{params[:id]}"
-      redirect_to store_url, notice: "The cart is invalid or doesn`t exist anymore."
+      redirect_to store_url, notice: 'The cart is invalid or doesn`t exist anymore.'
     end
 end

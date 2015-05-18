@@ -1,7 +1,7 @@
-Date: Thu, 07 May 2015 17:04:02 +0300
+Date: Mon, 18 May 2015 16:46:58 +0300
 From: denis@romanovsky.com
-To: MyString@dave.com
-Message-ID: <554b70d24059c_1cb970d334616c@denis-BelTech.mail>
+To: dave@example.com
+Message-ID: <5559ed5247ef5_2edd119f98c133f7@denis-BelTech.mail>
 Subject: Depot Order Confirmation.
 Mime-Version: 1.0
 Content-Type: text/plain;
@@ -13,7 +13,7 @@ Dear Dave Thomas
 Good day, Sir!
 
 Thank you for purchasing this item:
-
+ 1 x Programming Ruby 1.9
 
 Will inform you, when your purchase is shipped.
 
