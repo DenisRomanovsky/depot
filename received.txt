@@ -1,7 +1,7 @@
-Date: Mon, 18 May 2015 17:30:58 +0300
+Date: Thu, 21 May 2015 17:38:25 +0300
 From: denis@romanovsky.com
 To: dave@example.com
-Message-ID: <5559f7a253ac4_352b100598c95745@denis-BelTech.mail>
+Message-ID: <555dede159652_55d74e999033241@denis-BelTech.mail>
 Subject: Depot Order Confirmation.
 Mime-Version: 1.0
 Content-Type: text/plain;
